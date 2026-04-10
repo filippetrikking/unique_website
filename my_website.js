@@ -2,21 +2,22 @@
 
 // Create the HTML structure using JavaScript
 document.body.style.fontFamily = "Arial, sans-serif";
-document.body.style.background = "#f8f8f8";
+document.body.style.background = "#002451";
 document.body.style.margin = "0";
 document.body.style.padding = "0";
 
 const container = document.createElement('div');
 container.style.maxWidth = "400px";
 container.style.margin = "60px auto";
-container.style.background = "#fff";
+container.style.background = "#00346e";
 container.style.padding = "32px";
 container.style.borderRadius = "8px";
-container.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+container.style.boxShadow = "0 2px 12px rgba(0,0,0,0.2)";
 
 const heading = document.createElement('h2');
 heading.textContent = "Donate to Support Us";
 heading.style.textAlign = "center";
+heading.style.color = "#bbdaff";
 container.appendChild(heading);
 
 const form = document.createElement('form');
@@ -28,6 +29,7 @@ nameLabel.htmlFor = "name";
 nameLabel.textContent = "Your Name (optional):";
 nameLabel.style.display = "block";
 nameLabel.style.marginTop = "16px";
+nameLabel.style.color = "#ffffff";
 form.appendChild(nameLabel);
 
 const nameInput = document.createElement('input');
@@ -40,6 +42,8 @@ nameInput.style.padding = "8px";
 nameInput.style.marginTop = "4px";
 nameInput.style.border = "1px solid #ccc";
 nameInput.style.borderRadius = "4px";
+nameInput.style.background = "#0f3f7f";
+nameInput.style.color = "#ffffff";
 form.appendChild(nameInput);
 
 // Amount label and input
@@ -48,6 +52,7 @@ amountLabel.htmlFor = "amount";
 amountLabel.textContent = "Donation Amount (USD):";
 amountLabel.style.display = "block";
 amountLabel.style.marginTop = "16px";
+amountLabel.style.color = "#ffffff";
 form.appendChild(amountLabel);
 
 const amountInput = document.createElement('input');
@@ -61,8 +66,10 @@ amountInput.placeholder = "Enter amount";
 amountInput.style.width = "100%";
 amountInput.style.padding = "8px";
 amountInput.style.marginTop = "4px";
-amountInput.style.border = "1px solid #ccc";
+amountInput.style.border = "1px solid #335c99";
 amountInput.style.borderRadius = "4px";
+amountInput.style.background = "#0f3f7f";
+amountInput.style.color = "#ffffff";
 form.appendChild(amountInput);
 
 // Submit button
@@ -116,18 +123,20 @@ form.addEventListener('submit', function(e) {
 const gameContainer = document.createElement('div');
 gameContainer.style.marginTop = "40px";
 gameContainer.style.padding = "24px";
-gameContainer.style.background = "#f1f7ff";
+gameContainer.style.background = "#00346e";
 gameContainer.style.borderRadius = "8px";
-gameContainer.style.boxShadow = "0 1px 4px rgba(0,0,0,0.08)";
+gameContainer.style.boxShadow = "0 1px 6px rgba(0,0,0,0.15)";
 
 const gameTitle = document.createElement('h3');
 gameTitle.textContent = "Number Guessing Game";
 gameTitle.style.textAlign = "center";
+gameTitle.style.color = "#bbdaff";
 gameContainer.appendChild(gameTitle);
 
 const instructions = document.createElement('p');
 instructions.textContent = "Guess a number between 1 and 20:";
 instructions.style.textAlign = "center";
+instructions.style.color = "#ffffff";
 gameContainer.appendChild(instructions);
 
 const guessInput = document.createElement('input');
@@ -138,8 +147,10 @@ guessInput.placeholder = "Your guess";
 guessInput.style.width = "100%";
 guessInput.style.padding = "8px";
 guessInput.style.marginTop = "8px";
-guessInput.style.border = "1px solid #ccc";
+guessInput.style.border = "1px solid #335c99";
 guessInput.style.borderRadius = "4px";
+guessInput.style.background = "#0f3f7f";
+guessInput.style.color = "#ffffff";
 gameContainer.appendChild(guessInput);
 
 const guessBtn = document.createElement('button');

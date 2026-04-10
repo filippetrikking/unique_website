@@ -1,49 +1,105 @@
+html {
+    min-height: 100%;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 body {
     background-color: #002451;
-    color: #ffffff;
+    color: #c4dbff;
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 header {
-    background-color: #00346e;
+    background-color: #002451;
     padding: 1.5rem;
     text-align: center;
-    color: #ff9da4;
+    color: #c4dbff;
     font-size: 2rem;
     letter-spacing: 2px;
 }
 nav {
-    background-color: #00346e;
+    background-color: #002451;
     padding: 1rem;
     text-align: center;
 }
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+nav li {
+    margin: 0;
+}
 nav a {
-    color: #bbdaff;
+    color: #c4dbff;
     text-decoration: none;
-    margin: 0 1rem;
     font-weight: bold;
     transition: color 0.2s;
 }
 nav a:hover {
-    color: #ffc58f;
+    color: #ffffff;
+}
+section#site-sections ul {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+section#site-sections li {
+    margin: 0;
+}
+section#site-sections a {
+    color: #c4dbff;
+    text-decoration: none;
+    font-weight: bold;
+}
+section#site-sections a:hover {
+    color: #ffffff;
 }
 main {
-    padding: 2rem;
-    background-color: #001c3f;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: 2rem auto;
-    box-shadow: 0 2px 8px rgba(0,36,81,0.3);
-    color: #ffffff;
+    padding: 0;
+    background-color: #002451;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #c4dbff;
+}
+section {
+    padding: 4rem 1.5rem;
+    background-color: #002451;
+}
+section#home {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+footer {
+    background-color: #002451;
+    color: #c4dbff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
 }
 h1, h2, h3 {
-    color: #bbdaff;
+    color: #c4dbff;
 }
 button {
-    background-color: #0066ff;
-    color: #ffffff;
-    border: none;
+    background-color: #002451;
+    color: #c4dbff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
@@ -51,15 +107,5 @@ button {
     transition: background 0.2s;
 }
 button:hover {
-    background-color: #00346e;
-}
-footer {
-    background-color: #00346e;
-    color: #ffffff;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
+    background-color: #001b39;
 }
