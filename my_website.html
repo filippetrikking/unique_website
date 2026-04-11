@@ -8,7 +8,6 @@
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script> 
     <script src="my_website.js"></script>
     <link rel="stylesheet" href="my_website.css">
-    <
 </head>
 <body>
     <header>
@@ -86,22 +85,72 @@
             </ul>
         </section>
     </main>
-    <section>
+    <section id="game-section">
         <h2>Number Guessing Game</h2>
-        <input type="number" id="guessInput" placeholder="Enter your guess">
+        <p>Try to guess the secret number between 1 and 100!</p>
+        <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100">
         <button id="guessButton">Guess!</button>
         <div id="gameOutput"></div>
-        <script type="py">
-            secret_guess = 3
-            guess = 0
-
-            while guess != secret_guess:
-                guess = int(input('Guess the secret & hidden number!'))
-                if guess != secret_guess:
-                    print('Wrong! Try again.')
-            print('You got it!')
-        </script>
+        <button id="resetButton" style="display:none;">Play Again</button>
     </section>
+    <script>
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+        let gameOver = false;
+
+        const guessInput = document.getElementById('guessInput');
+        const guessButton = document.getElementById('guessButton');
+        const gameOutput = document.getElementById('gameOutput');
+        const resetButton = document.getElementById('resetButton');
+
+        guessButton.addEventListener('click', function() {
+            if (gameOver) return;
+
+            const guess = parseInt(guessInput.value);
+            attempts++;
+
+            if (isNaN(guess)) {
+                gameOutput.innerHTML = '<p style="color: red;">Please enter a valid number!</p>';
+                return;
+            }
+
+            if (guess < 1 || guess > 100) {
+                gameOutput.innerHTML = '<p style="color: red;">Please enter a number between 1 and 100!</p>';
+                return;
+            }
+
+            if (guess === secretNumber) {
+                gameOutput.innerHTML = `<p style="color: green; font-weight: bold;">🎉 You got it! The secret number was ${secretNumber}!</p><p>You guessed it in ${attempts} attempts!</p>`;
+                guessButton.style.display = 'none';
+                resetButton.style.display = 'inline-block';
+                gameOver = true;
+            } else if (guess < secretNumber) {
+                gameOutput.innerHTML = `<p style="color: orange;">Too low! Try again. (Attempt ${attempts})</p>`;
+            } else {
+                gameOutput.innerHTML = `<p style="color: orange;">Too high! Try again. (Attempt ${attempts})</p>`;
+            }
+
+            guessInput.value = '';
+            guessInput.focus();
+        });
+
+        resetButton.addEventListener('click', function() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            gameOver = false;
+            gameOutput.innerHTML = '';
+            guessInput.value = '';
+            guessButton.style.display = 'inline-block';
+            resetButton.style.display = 'none';
+            guessInput.focus();
+        });
+
+        guessInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                guessButton.click();
+            }
+        });
+    </script>
     <footer>
         <p>&copy; 2024 Nong Feel's Website</p>
     </footer>
